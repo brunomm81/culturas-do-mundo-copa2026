@@ -91,11 +91,14 @@
 }
 
 .site-header__mobile {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 2px;
   padding: 10px 20px 18px;
   border-top: 1px solid var(--line);
+}
+.site-header__mobile.is-open {
+  display: flex;
 }
 .site-header__mobile a {
   text-decoration: none;

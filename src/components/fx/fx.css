@@ -1,0 +1,120 @@
+/* ============ SplitText ============ */
+.split-text__word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.6em);
+  animation: split-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes split-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============ BlurText ============ */
+.blur-text {
+  opacity: 0;
+  filter: blur(8px);
+  animation: blur-in 0.9s ease forwards;
+}
+
+@keyframes blur-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* ============ ScrollReveal ============ */
+.scroll-reveal {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.scroll-reveal--up { transform: translateY(28px); }
+.scroll-reveal--left { transform: translateX(-28px); }
+.scroll-reveal--right { transform: translateX(28px); }
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ============ AnimatedContent ============ */
+.animated-content {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animated-content.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ============ SpotlightCard ============ */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(320px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--spot-color), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* ============ TiltedCard ============ */
+.tilted-card {
+  transition: transform 0.25s ease;
+  will-change: transform;
+}
+
+/* ============ Magnet ============ */
+.magnet {
+  display: inline-block;
+  transition: transform 0.15s ease-out;
+}
+
+/* ============ ShinyText ============ */
+.shiny-text {
+  background: linear-gradient(100deg, var(--blue-700) 40%, #fff 50%, var(--blue-700) 60%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 3.2s linear infinite;
+  font-weight: 800;
+}
+
+@keyframes shine {
+  0% { background-position: 120% 0; }
+  100% { background-position: -20% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .split-text__word,
+  .blur-text,
+  .scroll-reveal,
+  .animated-content {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+  .shiny-text {
+    animation: none;
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--blue-700);
+  }
+  .tilted-card, .magnet {
+    transition: none !important;
+  }
+}

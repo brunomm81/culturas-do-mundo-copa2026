@@ -14,8 +14,8 @@ export default defineConfig({
         short_name: 'Culturas do Mundo',
         description:
           'Projeto educacional sobre a cultura dos países participantes da Copa do Mundo FIFA 2026.',
-        theme_color: '#0b3d66',
-        background_color: '#fbf9f3',
+        theme_color: '#0d1526',
+        background_color: '#0d1526',
         display: 'standalone',
         orientation: 'portrait-primary',
         start_url: '/',

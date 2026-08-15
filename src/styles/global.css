@@ -1,40 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap");
 
 :root {
-  /* Paleta inspirada em diversidade cultural / Copa do Mundo */
+  /* Paleta inspirada em diversidade cultural / Copa do Mundo — layout escuro */
   --blue-900: #0b3d66;
-  --blue-700: #1264a3;
-  --blue-500: #2f9ee0;
-  --blue-100: #e3f3fd;
+  --blue-700: #57b8ee;
+  --blue-500: #3ea8e0;
+  --blue-100: rgba(87, 184, 238, 0.16);
 
-  --green-700: #1c7a4a;
+  --green-700: #4fd399;
   --green-500: #2ba86a;
-  --green-100: #e2f6ea;
+  --green-100: rgba(79, 211, 153, 0.16);
 
-  --yellow-600: #d99c00;
+  --yellow-600: #ffce54;
   --yellow-500: #f4c430;
-  --yellow-100: #fff6dc;
+  --yellow-100: rgba(244, 196, 48, 0.14);
 
-  --coral: #ef6a5a;
-  --purple: #8858c8;
+  --coral: #ff8a76;
+  --coral-100: rgba(255, 138, 118, 0.16);
+  --purple: #a685e0;
 
-  --paper: #fbf9f3;
-  --paper-alt: #ffffff;
-  --ink: #1c2530;
-  --ink-soft: #4b5666;
-  --line: #e7e0d1;
+  /* Cor de destaque para títulos (independente de --blue-900, que também
+     serve como superfície escura em rodapé/hero/faixas) */
+  --heading: #eaf4ff;
+  /* Azul sólido vívido para botões/estados ativos com texto branco
+     (--blue-700 agora é claro demais para isso, pois também é usado
+     como cor de texto sobre fundo escuro) */
+  --accent-solid: #1264a3;
+
+  --paper: #0d1526;
+  --paper-alt: #17233a;
+  --ink: #eef3fb;
+  --ink-soft: #9fb0c8;
+  --line: #29394f;
 
   --radius-lg: 26px;
   --radius-md: 18px;
   --radius-sm: 12px;
 
-  --shadow-card: 0 10px 30px -12px rgba(11, 61, 102, 0.22);
-  --shadow-soft: 0 4px 16px -6px rgba(11, 61, 102, 0.15);
+  --shadow-card: 0 10px 30px -12px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 4px 16px -6px rgba(0, 0, 0, 0.4);
 
   --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, -apple-system, sans-serif;
 
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * {
@@ -62,7 +71,7 @@ img {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  color: var(--blue-900);
+  color: var(--heading);
   margin: 0 0 0.5em;
   line-height: 1.15;
 }
@@ -232,7 +241,7 @@ input:focus-visible,
 }
 
 .blue-bg {
-  background: linear-gradient(180deg, var(--blue-900), var(--blue-700));
+  background: linear-gradient(180deg, var(--blue-900), var(--accent-solid));
   color: #fff;
 }
 .blue-bg h2, .blue-bg h3 { color: #fff; }
